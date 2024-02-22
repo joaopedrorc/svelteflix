@@ -31,16 +31,17 @@
 
 	function handleScroll() {
 		const remaining = viewport.scrollHeight - (viewport.scrollTop - viewport.clientHeight);
-		console.log(remaining);
 
-		if (remaining < 1400) {
+		console.log('remaining', remaining);
+
+		if (remaining < 400) {
 			dispatch('end');
 		}
 
 		a = Math.floor(viewport.scrollTop / itemHeight) * numColumns;
-		b = Math.min(a + Math.ceil(viewport.offsetHeight / itemHeight) * numColumns, movies.length);
+		b = Math.ceil((viewport.scrollTop + viewport.clientHeight) / itemHeight) * numColumns;
 
-		paddingTop = Math.floor((a / numColumns) * itemHeight);
+		paddingTop = Math.floor(a / numColumns) * itemHeight;
 		paddingBottom = Math.floor((movies.length - b) / numColumns) * itemHeight;
 	}
 
@@ -72,7 +73,6 @@
 
 <style>
 	.viewport {
-		height: 500px;
 		overflow-y: auto;
 	}
 

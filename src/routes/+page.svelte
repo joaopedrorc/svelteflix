@@ -3,8 +3,6 @@
 	import Carousel from '$lib/components/Carousel.svelte';
 	import { views } from '$lib/views';
 
-	console.log('views', views);
-
 	export let data;
 </script>
 

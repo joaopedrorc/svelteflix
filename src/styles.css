@@ -23,6 +23,8 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	heigth: 100vh;
+	margin: 0;
 }
 
 .column {

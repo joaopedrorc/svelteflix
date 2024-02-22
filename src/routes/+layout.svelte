@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	import '../styles.css';
 	import logo from '$lib/images/logo.svg';
 	import themoviedblogo from '$lib/images/themoviedblogo.svg';
@@ -14,7 +15,7 @@
 	</div>
 </nav>
 
-<main>
+<main class:infinite={$page.data.infinite}>
 	<slot />
 </main>
 
@@ -50,6 +51,12 @@
 	.links {
 		display: flex;
 		gap: 1rem;
+	}
+
+	main.infinite {
+		height: 0;
+		flex: 1;
+		overflow: hidden;
 	}
 
 	footer {
