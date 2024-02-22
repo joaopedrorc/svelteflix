@@ -4,7 +4,7 @@
 	import themoviedblogo from '$lib/images/themoviedblogo.svg';
 </script>
 
-<nav>
+<nav class="column">
 	<a href="/"> <img src={logo} alt="SvelteFlix Logo" /></a>
 
 	<div class="links">

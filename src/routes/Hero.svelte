@@ -4,8 +4,6 @@
 
 	export let movie: MovieDetails;
 
-	console.log('Helloooo', movie);
-
 	$: images = movie.images;
 	$: backdrop = images.backdrops.find((image) => !image.iso_639_1) || images.backdrops[0];
 	$: logo = images.logos.find((image) => image.iso_639_1 === 'en') || images.logos[0];
